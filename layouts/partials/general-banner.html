@@ -1,0 +1,10 @@
+{{ if .IsHome }}
+<div class="uk-container sg-banner sg-home-banner">
+    <p><span>redefine</span><span>digital</span><span class="sg-no-dot">design</span></p>
+    <p class="sg-subtitle uk-margin-remove-top">Deal with the complexity of VHDL, Verilog and SystemVerilog</p>
+</div>
+{{ else }}
+<header class="uk-container sg-banner sg-general-banner">
+    <p title="{{ .Title }}"><span>{{ .Title }}</span></p>
+</header>
+{{ end }}

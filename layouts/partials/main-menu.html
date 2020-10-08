@@ -1,0 +1,67 @@
+<div class="uk-container">
+    <nav data-uk-navbar class="sg-navbar-logo">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-item uk-logo uk-padding-remove" href="/">
+                <img data-src="/img/logo_positive_141.jpg" height="50" alt="Sigasi logo" data-uk-img>
+            </a>
+        </div>
+        <div class="uk-navbar-right uk-visible@m">
+            <ul class="uk-navbar-nav uk-height-1-1 uk-flex">
+                <li {{ if eq .Params.activemenu "product" }} class="uk-active" {{ end }}>
+                <a class="uk-flex-middle uk-height-1-1" href="/products">Products</a>
+                </li>
+                <li {{ if eq .Params.activemenu "trybuy" }} class="uk-active" {{ end }}>
+                <a class="uk-flex-middle uk-height-1-1" href="/try-buy">Try &amp; Buy</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="/download/">Download</a></li>
+                        <li><a href="/try-form/">Get your license</a></li>
+                        <li><a href="/buy/">Buy</a></li>
+                    </ul>
+                </div>
+                </li>
+                <li><a class="uk-flex-middle uk-height-1-1" href="//insights.sigasi.com">Insights</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a href="//insights.sigasi.com/manual">Manual</a></li>
+                            <li><a href="//insights.sigasi.com/faq">FAQ</a></li>
+                            <li><a href="//insights.sigasi.com/releasenotes/">Release Notes</a></li>
+                            <li><a href="//insights.sigasi.com/screencasts">Screencasts</a></li>
+                            <li><a href="//insights.sigasi.com/tech">Tech Articles</a></li>
+                            <li><a href="//insights.sigasi.com/opinion">Opinion</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li {{ if eq .Section "about" }} class="uk-active" {{ end }}>
+                <a class="uk-flex-middle uk-height-1-1" href="/about/">About</a>
+                </li>
+            </ul>
+        </div>
+        <button class="uk-button uk-button-link uk-hidden@m uk-position-right" type="button"
+                data-uk-toggle="target: #offcanvas-nav">
+            <span class="uk-margin-small-right uk-icon" data-uk-icon="icon: menu; ratio: 2"></span>
+        </button>
+    </nav>
+    <div id="offcanvas-nav" data-uk-offcanvas="overlay: true">
+        <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+
+            <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                <li><a href="/products">Products</a></li>
+                <li><a href="/try-buy">Try &amp; Buy</a></li>
+                <li><a href="//insights.sigasi.com">Insights</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/jobs/">Jobs</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+            <div class="uk-navbar-item uk-nav-center">
+                <form class="uk-search uk-search-navbar" action="/search" method="get">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: search"></span>
+                        <input class="uk-input uk-text-large" type="text" placeholder="Search" name="search">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<head>
+    {{ with $.Site.Params.googleTagManagerID }}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ . }}');</script>
+    <!-- End Google Tag Manager -->
+    {{ end }}
+    <meta charset="utf-8">
+  {{ if .Params.private }}
+    <meta name="robots" content="noindex, nofollow">
+  {{ else }}
+    <meta name="robots" content="index, follow">
+  {{ end }}
+    <title>{{ block "title" . }}{{ .Page.Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ $baseof_scratch := newScratch }}
+    {{ with .Params.description }}
+    {{ $baseof_scratch.Set "description" . }}
+    {{ else }}
+    {{ $baseof_scratch.Set "description" $.Site.Params.description }}
+    {{ end }}
+    <meta name="description" content="{{ $baseof_scratch.Get "description" }}" />
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{ $sass := resources.Get "sass/sigasi.scss" }}
+    {{ $options := (dict "targetPath" "css/sigasi.min.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+    {{ $style := $sass | resources.ToCSS $options }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}"/>
+    {{ with .Site.Data.Rss }}
+    {{ range .feeds }}
+    <link rel="alternate" type="application/rss+xml" href="{{ .url | absURL }}" title="{{ .title }}">
+    {{ end }}
+    {{ end }}
+    <meta property="og:site_name" content="Sigasi" />
+    <meta property="og:title" content="{{ .Page.Title }}" />
+    <meta property="og:description" content="{{ $baseof_scratch.Get "description" }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:image" content="{{ "/img/logo_positive_900.jpg" | absURL }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Sigasi" />
+    <meta name="twitter:creator" content="@Sigasi" />
+    <meta name="twitter:title" content="{{ .Page.Title }}" />
+    <meta name="twitter:description" content="{{ $baseof_scratch.Get "description" | truncate 200 }}" />
+    <meta name="twitter:image" content="{{ "/img/logo_positive_900.jpg" | absURL }}" />
+</head>
+

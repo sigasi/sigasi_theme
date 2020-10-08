@@ -1,0 +1,37 @@
+{{ $pag := $.Paginator }}
+<div class="uk-margin-top uk-padding-small" data-uk-grid>
+    {{ if gt $pag.TotalPages 1 }}
+    <div class="uk-width-1-1@l">
+        <ul class="uk-pagination uk-flex-right">
+
+            <!-- Previous page. -->
+            {{ if $pag.HasPrev }}
+            <a href="{{ $pag.Prev.URL }}">
+                <li>
+                    <span uk-pagination-previous></span>
+                </li>
+            </a>
+            {{ end }}
+
+            <!-- Page numbers. -->
+            {{ range $pag.Pagers }}
+            <a href="{{ .URL }}">
+                <li class="{{ if eq . $pag }} uk-active{{ end }}">
+                    {{ .PageNumber }}
+                </li>
+            </a>
+            {{ end }}
+
+            <!-- Next page. -->
+            {{ if $pag.HasNext }}
+            <a href="{{ $pag.Next.URL }}">
+                <li>
+                    <span uk-pagination-next></span>
+                </li>
+            </a>
+            {{ end }}
+
+        </ul><!-- .pagination -->
+    </div>
+    {{ end }}
+</div>
