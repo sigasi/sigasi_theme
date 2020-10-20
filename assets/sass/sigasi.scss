@@ -103,7 +103,8 @@ $nav-item-padding-vertical: 2px;
 }
 
 @mixin hook-navbar-dropdown {
-  padding: 15px;
+  padding: 10px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
 
 // 4. Import UIkit.
@@ -115,10 +116,6 @@ $nav-item-padding-vertical: 2px;
 
 .sg-navbar-logo {
   height: 110px;
-
-  img {
-    height: 50px;
-  }
 }
 
 .sg-border-bottom {
