@@ -122,78 +122,11 @@ $nav-item-padding-vertical: 2px;
   border-bottom: 1px solid $sg-border-color;
 }
 
-.uk-container.sg-banner {
-  background-color: $base-heading-color;
-  background-image: $sg-header-image;
-  background-repeat: repeat-y;
-  background-position: right top;
-  background-size: cover;
-  color: #fff;
-  height: 194px;
-
-  p:first-child {
-    margin-top: 65px;
-    margin-bottom: 10px;
-
-    span {
-      font-size: 50px;
-      font-weight: 600;
-    }
-  }
-
-  p span::after {
-    content: ".";
-    color: orange;
-    font-weight: bold;
-
-    :last-child {
-      content: none;
-    }
-  }
-
-  p:first-child span.sg-no-dot::after {
-    content: none;
-  }
-
-  p.sg-subtitle {
-    font-size: 22px;
-  }
-
-  @media (max-width: $breakpoint-small-max) {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-
-    p:first-child {
-      margin-top: 10px;
-      margin-bottom: 10px;
-
-      span {
-        font-size: 35px;
-      }
-    }
-
-    p:last-child {
-      font-size: 14px;
-    }
-  }
-
-  &.sg-general-banner {
-    p:first-child {
-      margin-top: 40px;
-    }
-
-    line-height: 1.3;
-  }
-
-  &.sg-home-banner {
-    background-color: $sg-light-purple;
-    background-image: $sg-header-image;
-    background-image: $sg-header-image, linear-gradient(90deg, $sg-light-purple 0%, $sg-red-alt 100%);
+.sg-title {
+  h1 {
+    font-family: Lato Black;
   }
 }
-
 
 #cookie_consent {
   border-top: 1px solid #e3e3e3;
