@@ -149,6 +149,7 @@ html, body {
   font-style: normal;
   font-size: 16px;
   scroll-behavior: smooth;
+  background: white;
 }
 
 header .logo {
@@ -166,21 +167,21 @@ header .logo {
 }
 
 .footer-widgets {
-  background: $sg-dark-purple;
+  background: $sg-border-color;
 }
 
 
 #copyright {
-  background: $sg-footer-grey;
+  background: black;
   font-size: 11px;
-  color: $sg-copyright-color;
+  color: $sg-border-color;
 
   a {
-    color: $sg-copyright-color;
+    color: $sg-border-color;
 
     &:hover {
       text-decoration: none;
-      color: $global-link-color-hover;
+      color: $sg-distributor-grey;
     }
   }
 ;
@@ -296,6 +297,28 @@ header .logo {
       content: " SIGASI STUDIO XPRT"
     }
   }
+}
+
+.sg-button-xl {
+    background-color: $sg-red;
+    color: white;
+}
+
+.sg-button-void-xl {
+    background-color: white;
+    border: 1px solid $sg-red;
+    color: $sg-red;
+}
+
+.sg-button-xprt {
+    background-color: $sg-light-purple;
+    color: white;
+}
+
+.sg-button-void-xprt {
+    background-color: white;
+    border: 1px solid $sg-light-purple;
+    color: $sg-light-purple;
 }
 
 .sg-top-left-icon {
