@@ -23,8 +23,8 @@ $global-link-color-hover: $sg-purple;
 $base-link-hover-color: $sg-purple;
 $base-link-hover-text-decoration: none !default;
 $card-default-hover-background: #fafafa !default;
-$navbar-nav-item-color: $global-link-color-hover !default;
-$navbar-nav-item-hover-color: $global-link-color !default;
+$navbar-nav-item-color: $sg-red !default;
+$navbar-nav-item-hover-color: $sg-orange !default;
 $navbar-nav-item-height: 36px;
 $navbar-nav-item-active-color: white;
 $base-em-color: $global-color;
@@ -167,22 +167,17 @@ header .logo {
 }
 
 .footer-widgets {
-  background: $sg-border-color;
+  font-size: 11px;
 }
 
 
 #copyright {
-  background: black;
+  border-top: 1px solid $sg-border-color;
   font-size: 11px;
-  color: $sg-border-color;
-
   a {
-    color: $sg-border-color;
-
-    &:hover {
-      text-decoration: none;
-      color: $sg-distributor-grey;
-    }
+      &:hover {
+        text-decoration: none;
+      }
   }
 ;
 }

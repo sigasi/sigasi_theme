@@ -11,7 +11,7 @@
                 <a class="uk-flex-middle uk-height-1-1" href="/products">Products</a>
                 </li>
                 <li {{ if eq .Params.activemenu "trybuy" }} class="uk-active" {{ end }}>
-                <a class="uk-flex-middle uk-height-1-1" href="/try-buy">Try &amp; Buy</a>
+                <a class="uk-flex-middle uk-height-1-1" href="/try-buy" uk-icon="icon: triangle-down">Try &amp; Buy</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li><a href="/download/">Download</a></li>
@@ -20,7 +20,7 @@
                     </ul>
                 </div>
                 </li>
-                <li><a class="uk-flex-middle uk-height-1-1" href="//insights.sigasi.com">Insights</a>
+                <li><a class="uk-flex-middle uk-height-1-1" href="//insights.sigasi.com" uk-icon="icon: triangle-down">Insights</a>
                     <div class="uk-navbar-dropdown">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             <li><a href="//insights.sigasi.com/manual">Manual</a></li>
