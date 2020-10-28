@@ -124,7 +124,8 @@ $nav-item-padding-vertical: 2px;
 
 .sg-title {
   h1 {
-    font-family: Lato Black;
+    font-family: Lato;
+    font-weight: 900;
   }
 }
 
@@ -138,7 +139,7 @@ $nav-item-padding-vertical: 2px;
 }
 
 h1 {
-  line-height: 40px;
+  line-height: 120%;
   font-weight: 400;
   font-style: normal;
 }
@@ -173,6 +174,7 @@ header .logo {
 
 #copyright {
   border-top: 1px solid $sg-border-color;
+  border-bottom: 1px solid $sg-border-color;
   font-size: 11px;
   a {
       &:hover {
