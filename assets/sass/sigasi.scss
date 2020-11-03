@@ -165,6 +165,12 @@ header .logo {
   background: none;
   color: #666;
   box-shadow: none;
+  .uk-card-header {
+      border-bottom: none;
+  }
+  .uk-card-footer {
+      border-top: none;
+  }
 }
 
 .footer-widgets {
