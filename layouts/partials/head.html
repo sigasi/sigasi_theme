@@ -24,6 +24,12 @@
     {{ $options := (dict "targetPath" "css/sigasi.min.css" "outputStyle" "compressed" "enableSourceMap" true) }}
     {{ $style := $sass | resources.ToCSS $options }}
     <link rel="stylesheet" href="{{ $style.Permalink }}"/>
+    {{ $sass_insights := resources.Get "sass/insights.scss" }}
+    {{ with $sass_insights }}
+    {{ $options_insights := (dict "targetPath" "css/insights.min.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+    {{ $style_insights := $sass_insights | resources.ToCSS $options_insights }}
+    <link rel="stylesheet" href="{{ $style_insights.Permalink }}"/>
+    {{ end }}
     {{ with .Site.Data.Rss }}
     {{ range .feeds }}
     <link rel="alternate" type="application/rss+xml" href="{{ .url | absURL }}" title="{{ .title }}">
