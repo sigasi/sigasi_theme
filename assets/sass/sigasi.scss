@@ -66,8 +66,6 @@ $nav-item-padding-vertical: 2px;
 @mixin hook-container-misc() {
   .uk-container {
     background: white;
-    border-left: 1px solid #e3e3e3;
-    border-right: 1px solid #e3e3e3;
   }
 }
 
@@ -187,8 +185,6 @@ header .logo {
 
 
 #copyright {
-  border-top: 1px solid $sg-border-color;
-  border-bottom: 1px solid $sg-border-color;
   font-size: 11px;
   a {
       &:hover {
