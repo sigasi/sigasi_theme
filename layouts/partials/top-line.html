@@ -10,11 +10,42 @@
         </div>
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav">
-                <li {{ if eq .Params.activemenu "support" }} class="uk-active" {{ end }}><a href="/support/">Support</a></li>
+                <li {{ if eq .Params.activemenu "product" }} class="uk-active" {{ end }}>
+                    <a class="uk-flex-middle uk-height-1-1" href="/products/">Products</a>
+                </li>
+                <li {{ if eq .Params.activemenu "trybuy" }} class="uk-active" {{ end }}>
+                    <a class="uk-flex-middle uk-height-1-1" href="/try-buy" uk-icon="icon: triangle-down">Try &amp; Buy</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a href="/download/">Download</a></li>
+                            <li><a href="/try-form/">Get your license</a></li>
+                            <li><a href="/buy/">Buy</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a class="uk-flex-middle uk-height-1-1" href="//insights.sigasi.com" uk-icon="icon: triangle-down">Insights</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a href="//insights.sigasi.com/manual/">Manual</a></li>
+                            <li><a href="//insights.sigasi.com/faq/">FAQ</a></li>
+                            <li><a href="//insights.sigasi.com/releasenotes/">Release Notes</a></li>
+                            <li><a href="//insights.sigasi.com/screencasts/">Screencasts</a></li>
+                            <li><a href="//insights.sigasi.com/tech/">Tech Articles</a></li>
+                            <li><a href="//insights.sigasi.com/opinion/">Opinion</a></li>
+                        </ul>
+                    </div>
+                </li>
                 <li {{ if eq .Params.activemenu "sdk" }}  class="uk-active" {{ end }}><a href="/sdk/">Sigasi SDK</a></li>
-                <li {{ if eq .Section "jobs" }} class="uk-active" {{ end }}><a href="/jobs/">Jobs</a></li>
-                <li {{ if eq .Section "news" }} class="uk-active" {{ end }}><a href="/news/">News</a></li>
-                <li {{ if eq .Params.activemenu "contact" }} class="uk-active" {{ end }}><a href="/contact/">Contact</a></li>
+                <li><a href="/about/" uk-icon="icon: triangle-down">Company</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li {{ if eq .Params.activemenu "support" }} class="uk-active" {{ end }}><a href="/support/">Support</a></li>
+                            <li {{ if eq .Section "jobs" }} class="uk-active" {{ end }}><a href="/jobs/">Jobs</a></li>
+                            <li {{ if eq .Section "news" }} class="uk-active" {{ end }}><a href="/news/">News</a></li>
+                            <li {{ if eq .Params.activemenu "contact" }} class="uk-active" {{ end }}><a href="/contact/">Contact</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
