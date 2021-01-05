@@ -35,6 +35,10 @@
     <link rel="alternate" type="application/rss+xml" href="{{ .url | absURL }}" title="{{ .title }}">
     {{ end }}
     {{ end }}
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta property="og:site_name" content="Sigasi" />
     <meta property="og:title" content="{{ .Page.Title }}" />
     <meta property="og:description" content="{{ $baseof_scratch.Get "description" }}" />
