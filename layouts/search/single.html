@@ -1,0 +1,113 @@
+{{ define "main" }}
+<div class="uk-container">
+    <div id="sg-search-result" class="uk-hidden uk-padding-small uk-padding-remove-top uk-margin-top"
+         data-uk-grid="masonry: true">
+    </div>
+    <div id="sg-searching" class="uk-hidden uk-text-center uk-padding-large">
+        <span class="uk-margin-small-right" data-uk-spinner="ratio: 5"></span>
+    </div>
+    <div id="sg-next-result" class="uk-hidden uk-margin uk-text-center">
+        <button id="sg-next-result-btn" class="uk-button uk-button-primary uk-border-rounded">More results</button>
+    </div>
+    <div id="sg-no-search" class="uk-hidden uk-padding-large">
+        <h3 id="sg-no-results" class="uk-hidden">No results</h3>
+        <h2>Use the form below to search for Sigasi content.</h2>
+        <form action="/search" method="get">
+            <div class="uk-inline">
+                <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: search"></span>
+                <input class="uk-input uk-form-small uk-form-width-medium" type="text" placeholder="Search"
+                       name="search">
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    window.sigasi = window.sigasi || {}
+    window.sigasi.offset = 0;
+
+    function createCard(title, href, summary) {
+        let card = document.createElement("div");
+        card.classList.add("uk-card", "uk-card-default", "uk-width-1-3@m", "uk-card-small", "uk-card-body", "uk-card-hover");
+        let link = document.createElement("a");
+        link.href = href;
+        card.appendChild(link)
+        let header = document.createElement("h3");
+        header.classList.add("uk-card-title");
+        header.innerText = title;
+        link.appendChild(header)
+        let paragraph = document.createElement("p");
+        paragraph.classList.add("uk-card-default");
+        link.appendChild(paragraph);
+        paragraph.innerText = summary;
+        return card;
+    }
+
+    function showSearchForm(showNoResults){
+        if (showNoResults){
+            document.getElementById("sg-no-results").classList.remove("uk-hidden");
+        }
+        document.getElementById("sg-no-search").classList.remove("uk-hidden");
+
+    }
+
+    function bingSearch(term) {
+        const customConfigId = "3140052572";
+        const subscriptionKey = "0b7aff6d84334f2982750e3c1cc3abce";
+        const url = 'https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?' +
+            'q=' + term +
+            '&customconfig=' + customConfigId +
+            '&count=15' +
+            '&offset=' + window.sigasi.offset;
+        const searchBtnContainer = document.getElementById('sg-next-result');
+        let spinner = document.getElementById("sg-searching");
+        window.sigasi.offset += 15;
+        spinner.classList.remove('uk-hidden');
+        searchBtnContainer.classList.add('uk-hidden')
+
+        const Http = new XMLHttpRequest();
+        Http.open("GET", url);
+        Http.setRequestHeader('Ocp-Apim-Subscription-Key', subscriptionKey);
+        Http.send();
+        Http.onreadystatechange = function(){
+            if (Http.readyState === 4) {
+                let searchResultContainer = document.getElementById("sg-search-result");
+                try {
+                    console.log(Http.responseText)
+                    let searchResult = JSON.parse(Http.responseText);
+                    if (searchResult.webPages) {
+                        let i;
+                        for (i = 0; i < searchResult.webPages.value.length; i++) {
+                            let result = searchResult.webPages.value[i]
+                            searchResultContainer.appendChild(createCard(result.name, result.url, result.snippet));
+                        }
+                        searchResultContainer.classList.remove("uk-hidden");
+                        if (searchResult.webPages.totalEstimatedMatches < window.sigasi.offset) {
+                            searchBtnContainer.classList.add('uk-hidden');
+                        } else {
+                            searchBtnContainer.classList.remove('uk-hidden');
+                        }
+                    } else {
+                        showSearchForm(true);
+                    }
+                    spinner.classList.add('uk-hidden');
+                } catch (e) {
+                    console.error(e)
+                }
+            }
+        }
+    }
+
+    const searchTerm = new RegExp('[\?&]search=([^&#]*)').exec(window.location.href);
+    if (searchTerm) {
+        bingSearch(searchTerm);
+        let searchBtn = document.getElementById("sg-next-result-btn");
+        searchBtn.classList.remove('uk-hidden');
+        searchBtn.onclick = function () {
+            bingSearch(searchTerm)
+        };
+    } else {
+        showSearchForm(false);
+    }
+
+</script>
+{{ end }}
