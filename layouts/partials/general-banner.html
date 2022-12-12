@@ -1,10 +1,15 @@
 {{ if ne .Params.hidetitle true }}
 <div class="uk-container">
-  <header class="uk-text-center sg-title">
-    <h1 class="uk-text-uppercase uk-heading-medium" title="{{ .Title }}" id="sigasi-top"><span>{{ .Title }}</span></h1>
-    {{ with .Params.subtitle }}
-    <h2 class="sg-red" title="{{ . }}" id="sigasi-top"><span>{{ . }}</span></h2>
-    {{ end }}
-  </header>
+    <header class="uk-text-center sg-title">
+        {{ if eq .Params.mainpage true }}
+        <h1 class="uk-text-uppercase uk-heading-medium" title="{{ .Title }}" id="sigasi-top"><span>{{ .Title }}</span>
+        </h1>
+        {{ with .Params.subtitle }}
+        <h2 class="sg-red" title="{{ . }}" id="sigasi-top"><span>{{ . }}</span></h2>
+        {{ end }}
+        {{ else }}
+        <h1 title="{{ .Title }}" id="sigasi-top"><span>{{ .Title }}</span></h1>
+        {{ end }}
+    </header>
 </div>
 {{ end }}
