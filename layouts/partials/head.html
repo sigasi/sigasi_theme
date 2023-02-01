@@ -54,5 +54,5 @@
     <meta name="twitter:title" content="{{ .Page.Title }}" />
     <meta name="twitter:description" content="{{ $baseof_scratch.Get "description" | truncate 200 }}" />
     <meta name="twitter:image" content="{{ "/img/logo_positive_900.jpg" | absURL }}" />
+    {{- partial "head_optional.html" . -}}
 </head>
-
