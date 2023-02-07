@@ -5,13 +5,19 @@
         <h1 class="uk-text-uppercase uk-heading-medium" title="{{ .Title }}" id="sigasi-top"><span>{{ .Title }}</span>
         </h1>
         {{ with .Params.subtitle }}
-        <h2 class="sg-red" title="{{ . }}" id="sigasi-top"><span>{{ . }}</span></h2>
+        <h2 class="sg-red" title="{{ . }}"><span>{{ . }}</span></h2>
         {{ end }}
         {{ with .Params.subtext }}
         <h2>{{ . }}</h2>
         {{ end }}
         {{ else }}
         <h1 title="{{ .Title }}" id="sigasi-top"><span>{{ .Title }}</span></h1>
+        {{ end }}
+        {{ with .Params.subtitle }}
+        <h2 title="{{ . }}"><span>{{ . }}</span></h2>
+        {{ end }}
+        {{ with .Params.subtext }}
+        <h4>{{ . }}</h4>
         {{ end }}
     </header>
 </div>

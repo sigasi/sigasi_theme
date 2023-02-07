@@ -33,10 +33,12 @@
     </div>
 </footer>
 
+{{ if not .Params.hidetotop }}
 <a href="#sigasi-top">
     <div class="uk-position-fixed sg-scroller uk-visible@m" data-uk-scroll data-uk-totop>
     </div>
 </a>
+{{ end }}
 
 <div id="cookie_consent" class="section uk-position-bottom uk-position-fixed uk-hidden" style="background: white">
     <div class="uk-container uk-padding-small">
