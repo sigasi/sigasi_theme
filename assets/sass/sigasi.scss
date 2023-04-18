@@ -6,6 +6,7 @@ $sg-orange: #f47920;
 $sg-purple: #1a134c;
 $sg-dark-purple: #262262;
 $sg-light-purple: #532f87;
+$sg-bordeaux: #9e2253;
 $sg-muted-grey: #f8f8f8;
 $sg-distributor-grey: #898989;
 $sg-copyright-color: #e4e4e4;
@@ -303,6 +304,11 @@ header .logo {
       content: " SIGASI STUDIO XPRT"
     }
   }
+}
+
+.sg-button-bordeaux {
+    background-color: $sg-bordeaux;
+    color: white;
 }
 
 .sg-button-xl {
