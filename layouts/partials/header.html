@@ -3,6 +3,11 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ . }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 {{ end }}
+{{ with and ($.Site.Params.MatomoURL) ($.Site.Params.MatomoID) }}
+<!-- Matomo -->
+<noscript><p><img src="https://{{ $.Site.Params.MatomoURL }}/matomo.php?idsite={{ $.Site.Params.MatomoID }}&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Matomo Code -->
+{{ end }}
 
 {{ partial "top-line.html" . }}
 {{ partial "main-menu.html" . }}
