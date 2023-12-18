@@ -10,11 +10,11 @@
             </div>
             <div>
                 <h4>Company Info</h4>
-                <div class="uk-column-1-2">
+                <ul class="uk-list uk-column-1-2">
                     {{ range .Site.Menus.footer }}
                     <li><a href="{{ .URL }}">{{ .Name }}</a></li>
                     {{ end }}
-                </div>
+                </ul>
             </div>
             <div>
                 <h4>Contact Information</h4>
