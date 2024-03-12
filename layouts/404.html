@@ -1,10 +1,27 @@
 {{ define "main" }}
 <div class="uk-container uk-text-center">
-    <div class="uk-card uk-card-default uk-card-body">
-        <img data-src="/img/http_error_404.svg" date-width data-height uk-img>
-    </div>
-    <div class="uk-margin-bottom">
-        Expected something different? Feel free to ask for <a href="https://www.sigasi.com/support/">support</a>.
+    <div uk-grid>
+        <div class="uk-width-3-4@m">
+            <div class="uk-margin-top">
+                Expected something different? Try to search here.<br>
+                Or feel free to ask for <a href="https://www.sigasi.com/support/">support</a> if you can't find it.
+            </div>
+            <div class="uk-padding">
+                <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+                <script src="/pagefind/pagefind-ui.js" type="text/javascript"></script>
+                <div id="search"></div>
+                <script>
+                    window.addEventListener('DOMContentLoaded', (event) => {
+                        new PagefindUI({ element: "#search", showSubResults: false });
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="uk-width-1-4@m">
+            <div class="uk-card uk-card-default uk-card-body">
+                <img data-src="/img/http_error_404.svg" date-width data-height uk-img>
+            </div>
+        </div>
     </div>
 </div>
 {{ end }}
