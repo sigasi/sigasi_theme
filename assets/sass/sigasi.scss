@@ -2,12 +2,6 @@
 $sg-white: #f8f8f8;
 $sg-black: #404040;
 $sg-orange: #ec6508;
-$sg-primary-button-background: $sg-orange;
-$sg-primary-button-hover-background: $sg-white;
-$sg-secondary-button-background: $sg-black;
-$sg-secondary-button-hover-background: $sg-white;
-$sg-danger-button-background: $sg-orange;
-$sg-danger-button-hover-background: $sg-white;
 $global-background: $sg-white;
 $global-link-color: $sg-black;
 $global-link-color-hover: $sg-orange;
@@ -27,12 +21,15 @@ $base-heading-margin-top: 20px;
 $sg-border-color: $sg-white;
 $container-max-width: 1160px;
 $container-padding-horizontal: 20px;
-$button-primary-background: $sg-primary-button-background !default;
-$button-primary-hover-background: $sg-primary-button-hover-background !default;
-$button-secondary-background: $sg-secondary-button-background !default;
-$button-secondary-hover-background: $sg-secondary-button-hover-background !default;
-$button-danger-background: $sg-danger-button-background !default;
-$button-danger-hover-background: $sg-danger-button-hover-background !default;
+$button-primary-background: $sg-orange !default;
+$button-primary-hover-background: $sg-orange !default;
+$button-primary-hover-color: $sg-black !default;
+$button-secondary-background: $sg-black !default;
+$button-secondary-hover-background: $sg-black !default;
+$button-secondary-hover-color: $sg-orange !default;
+$button-danger-background: $sg-orange !default;
+$button-danger-hover-background: $sg-orange !default;
+$button-danger-hover-color: $sg-black !default;
 $button-text-transform: none !default;
 $navbar-dropdown-margin: 0px;
 $navbar-dropdown-width: 150px !default;
@@ -147,7 +144,7 @@ header .logo {
 }
 
 .sg-block-dark {
-  background: $sg-white;
+  background: $sg-black;
 }
 
 .uk-card-default {
@@ -158,7 +155,7 @@ header .logo {
       border-bottom: none;
   }
   .uk-card-title {
-    color: $sg-primary-button-background;
+    color: $sg-orange;
   }
   .uk-card-footer {
       border-top: none;
@@ -265,71 +262,6 @@ header .logo {
   }
 }
 
-.sg-creator-check {
-  color: #cc2128;
-  @media (max-width: $breakpoint-small-max) {
-    &::after {
-      content: " SIGASI STUDIO CREATOR"
-    }
-  }
-}
-
-.sg-xl-check {
-  color: $sg-orange;
-  @media (max-width: $breakpoint-small-max) {
-    &::after {
-      content: " SIGASI STUDIO XL"
-    }
-  }
-}
-
-.sg-xprt-check {
-  color: $sg-black;
-  @media (max-width: $breakpoint-small-max) {
-    &::after {
-      content: " SIGASI STUDIO XPRT"
-    }
-  }
-}
-
-.sg-button-bordeaux {
-    background-color: $sg-black;
-    color: $sg-white;
-}
-
-.sg-button-xl {
-    background-color: $sg-orange;
-    color: $sg-white;
-}
-
-.sg-button-void-xl {
-    background-color: $sg-white;
-    border: 1px solid $sg-orange;
-    color: $sg-orange;
-}
-
-.sg-button-xprt {
-    background-color: $sg-orange;
-    color: $sg-white;
-}
-
-.sg-button-void-xprt {
-    background-color: $sg-white;
-    border: 1px solid $sg-orange;
-    color: $sg-orange;
-}
-
-.sg-button-void-orange {
-    background-color: $sg-white;
-    border: 1px solid $sg-orange;
-    color: $sg-orange;
-}
-
-.sg-top-left-icon {
-  top: 0;
-  left: 0;
-}
-
 .uk-pagination li {
   border: 1px solid $sg-black;
   padding: 5px;
@@ -404,7 +336,7 @@ a.sg-distributor-icon {
 
 a.sg-campaign {
   display: block;
-  background-color: $sg-black;
+  background-color: $sg-orange;
   color: $sg-white;
   padding: 20px 0;
   text-align: center;
