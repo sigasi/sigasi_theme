@@ -1,40 +1,27 @@
 // 1. Your custom variables and variable overwrites.
-$sg-blue: #323286;
-$sg-red: #ed1c24;
-$sg-red-alt: #e91d29; // almost indistinguishable from sg-red - used as hover background and for header gradient
-$sg-orange: #f47920;
-$sg-purple: #1a134c;
-$sg-dark-purple: #302158;
-$sg-light-purple: #532f87;
-$sg-bordeaux: #9e2253;
-$sg-muted-grey: #f8f8f8;
-$sg-distributor-grey: #898989;
-$sg-copyright-color: #e4e4e4;
-$sg-footer-grey: #333;
-$sg-primary-button-background: $sg-dark-purple;
-$sg-primary-button-hover-background: $sg-light-purple;
-$sg-secondary-button-background: $sg-red;
-$sg-secondary-button-hover-background: $sg-red-alt;
+$sg-white: #f8f8f8;
+$sg-black: #404040;
+$sg-orange: #ec6508;
+$sg-primary-button-background: $sg-orange;
+$sg-primary-button-hover-background: $sg-white;
+$sg-secondary-button-background: $sg-black;
+$sg-secondary-button-hover-background: $sg-white;
 $sg-danger-button-background: $sg-orange;
-$sg-danger-button-hover-background: #f97e25;
-$sg-header-image: url(/img/header.png);
-$global-color: #414042;
-$global-link-color: $sg-orange;
-$global-link-color-hover: $sg-purple;
-$base-link-hover-color: $sg-purple;
-$base-link-hover-text-decoration: none !default;
-$card-default-hover-background: #fafafa !default;
-$navbar-nav-item-color: $sg-red !default;
+$sg-danger-button-hover-background: $sg-white;
+$global-background: $sg-white;
+$global-link-color: $sg-black;
+$global-link-color-hover: $sg-orange;
+$base-link-text-decoration: underline;
+$base-link-hover-color: $sg-black;
+$card-default-hover-background: $sg-white !default;
+$navbar-nav-item-color: $sg-orange !default;
 $navbar-nav-item-hover-color: $sg-orange !default;
 $navbar-nav-item-height: 36px;
-$navbar-nav-item-active-color: $sg-dark-purple;
-$base-em-color: $global-color;
+$navbar-nav-item-active-color: $sg-black;
 $global-font-family: Lato;
-$base-heading-color: $sg-dark-purple;
-$base-body-background: #eeedf3;
+$base-heading-color: $sg-orange;
 $base-heading-margin-top: 20px;
-$sg-border-color: #e3e3e3;
-$sg-pagination-border: #dadada;
+$sg-border-color: $sg-white;
 $container-max-width: 1160px;
 $container-padding-horizontal: 20px;
 $button-primary-background: $sg-primary-button-background !default;
@@ -66,7 +53,7 @@ $nav-item-padding-vertical: 2px;
 
 @mixin hook-container-misc() {
   .uk-container {
-    background: white;
+    background: $sg-white;
   }
 }
 
@@ -76,7 +63,7 @@ $nav-item-padding-vertical: 2px;
 }
 
 @mixin hook-base-h3 {
-  color: $sg-red;
+  color: $sg-orange;
 }
 
 @mixin hook-grid-misc {
@@ -103,7 +90,7 @@ $nav-item-padding-vertical: 2px;
 
 @mixin hook-navbar-dropdown {
   padding: 10px;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 12px $sg-black;
 }
 
 @mixin hook-base-code() {
@@ -133,7 +120,7 @@ $nav-item-padding-vertical: 2px;
 }
 
 #cookie_consent {
-  border-top: 1px solid #e3e3e3;
+  border-top: 1px solid $sg-white;
 
   .uk-container {
     border-left: none;
@@ -153,7 +140,7 @@ html, body {
   font-style: normal;
   font-size: 16px;
   scroll-behavior: smooth;
-  background: white;
+  background: $sg-white;
 }
 
 header .logo {
@@ -161,12 +148,12 @@ header .logo {
 }
 
 .sg-block-dark {
-  background: $sg-muted-grey;
+  background: $sg-white;
 }
 
 .uk-card-default {
-  background: none;
-  color: #666;
+//   background: none;
+  color: $sg-white;
   box-shadow: none;
   .uk-card-header {
       border-bottom: none;
@@ -197,13 +184,13 @@ header .logo {
 .sg-testimonials {
 
   h3 {
-    color: $sg-red;
+    color: $sg-orange;
     font-size: 31px;
     text-transform: uppercase;
   }
 
   .quote {
-    color: $sg-purple;
+    color: $sg-black;
     font-size: 30px;
     line-height: 40px;
     font-style: italic;
@@ -218,12 +205,12 @@ header .logo {
 .sg-sdk {
 
   h3 {
-    color: $sg-red;
+    color: $sg-orange;
     font-size: 31px;
   }
 
   .quote {
-    color: $sg-purple;
+    color: $sg-black;
     font-size: 20px;
     line-height: 25px;
     font-style: italic;
@@ -240,7 +227,7 @@ header .logo {
 }
 
 .sg-mac-border {
-  border: 5px solid white;
+  border: 5px solid $sg-white;
   overflow: hidden;
 
   img {
@@ -248,14 +235,14 @@ header .logo {
     top: 30px;
     left: -50px;
     border-radius: 25px;
-    border: 15px solid black;
-    box-shadow: 0 0 0 3px $sg-muted-grey;
+    border: 15px solid $sg-black;
+    box-shadow: 0 0 0 3px $sg-black;
   }
 }
 
 .sg-product-overview {
   div {
-    color: $sg-dark-purple;
+    color: $sg-black;
     min-height: 195px;
   }
 
@@ -289,7 +276,7 @@ header .logo {
 }
 
 .sg-xl-check {
-  color: $sg-red;
+  color: $sg-orange;
   @media (max-width: $breakpoint-small-max) {
     &::after {
       content: " SIGASI STUDIO XL"
@@ -298,7 +285,7 @@ header .logo {
 }
 
 .sg-xprt-check {
-  color: $sg-light-purple;
+  color: $sg-black;
   @media (max-width: $breakpoint-small-max) {
     &::after {
       content: " SIGASI STUDIO XPRT"
@@ -307,34 +294,34 @@ header .logo {
 }
 
 .sg-button-bordeaux {
-    background-color: $sg-bordeaux;
-    color: white;
+    background-color: $sg-black;
+    color: $sg-white;
 }
 
 .sg-button-xl {
-    background-color: $sg-red;
-    color: white;
+    background-color: $sg-orange;
+    color: $sg-white;
 }
 
 .sg-button-void-xl {
-    background-color: white;
-    border: 1px solid $sg-red;
-    color: $sg-red;
+    background-color: $sg-white;
+    border: 1px solid $sg-orange;
+    color: $sg-orange;
 }
 
 .sg-button-xprt {
-    background-color: $sg-light-purple;
-    color: white;
+    background-color: $sg-orange;
+    color: $sg-white;
 }
 
 .sg-button-void-xprt {
-    background-color: white;
-    border: 1px solid $sg-light-purple;
-    color: $sg-light-purple;
+    background-color: $sg-white;
+    border: 1px solid $sg-orange;
+    color: $sg-orange;
 }
 
 .sg-button-void-orange {
-    background-color: white;
+    background-color: $sg-white;
     border: 1px solid $sg-orange;
     color: $sg-orange;
 }
@@ -345,7 +332,7 @@ header .logo {
 }
 
 .uk-pagination li {
-  border: 1px solid $sg-pagination-border;
+  border: 1px solid $sg-black;
   padding: 5px;
   min-width: 20px;
   text-align: center;
@@ -357,9 +344,9 @@ header .logo {
 }
 
 .sg-scroller {
-  border: 1px solid #999;
+  border: 1px solid $sg-white;
   border-radius: 4px;
-  color: #999;
+  color: $sg-white;
   display: block;
   font-size: 24px;
   line-height: 36px;
@@ -372,15 +359,15 @@ header .logo {
 }
 
 .sg-primary-icon {
-  color: $sg-red;
+  color: $sg-orange;
 }
 
 .sg-secondary-icon {
-    color: $sg-light-purple;
+    color: $sg-orange;
 }
 
 h2.sg-red {
-  color: $sg-red
+  color: $sg-orange
 }
 
 .sg-orange {
@@ -388,10 +375,10 @@ h2.sg-red {
 }
 
 a.sg-distributor-icon {
-  color: $sg-distributor-grey;
+  color: $sg-white;
 
   &:hover {
-    color: $sg-distributor-grey;
+    color: $sg-white;
   }
 }
 
@@ -405,25 +392,6 @@ a.sg-distributor-icon {
     left: 0;
     width: 100%;
     height: 100%;
-  }
-}
-
-.sg-map-container {
-  div {
-    padding-top: 50%;
-
-    div {
-      display: none;
-      background: rgba(244, 121, 32, .9);
-      height: 100%;
-      width: 100%;
-    }
-
-    &:hover {
-      div {
-        display: initial;
-      }
-    }
   }
 }
 
@@ -445,8 +413,8 @@ a.sg-distributor-icon {
 
 a.sg-campaign {
   display: block;
-  background-color: $sg-dark-purple;
-  color: white;
+  background-color: $sg-black;
+  color: $sg-white;
   padding: 20px 0;
   text-align: center;
   font-size: 30px;
@@ -458,12 +426,12 @@ a.sg-campaign {
 a.sg-insight-pager {
   display: inline-block;
   padding: 5px 14px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: $sg-white;
+  border: 1px solid $sg-white;
   border-radius: 15px;
 
   &:hover {
-    background-color: #ddd;
+    background-color: $sg-white;
   }
 
   &.sg-left::before {
@@ -506,12 +474,12 @@ dl dd {
 }
 
 pre {
-    background: #f8f8f8;
+    background: $sg-white;
 }
 
 blockquote {
     padding-left: 20px;
-    border-left: 5px solid #eee;
+    border-left: 5px solid $sg-white;
 }
 
 // 6. import fonts
