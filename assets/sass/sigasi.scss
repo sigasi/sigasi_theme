@@ -11,8 +11,11 @@ $sg-danger-button-hover-background: $sg-white;
 $global-background: $sg-white;
 $global-link-color: $sg-black;
 $global-link-color-hover: $sg-orange;
+$global-danger-background: $sg-black;
 $base-link-text-decoration: underline;
-$base-link-hover-color: $sg-black;
+$base-link-hover-color: $sg-orange;
+$base-code-color: $sg-orange;
+$base-pre-color: $sg-orange;
 $card-default-hover-background: $sg-white !default;
 $navbar-nav-item-color: $sg-orange !default;
 $navbar-nav-item-hover-color: $sg-orange !default;
@@ -60,10 +63,6 @@ $nav-item-padding-vertical: 2px;
 @mixin hook-base-h1 {
   margin-bottom: 10px;
   margin-top: 40px;
-}
-
-@mixin hook-base-h3 {
-  color: $sg-orange;
 }
 
 @mixin hook-grid-misc {
@@ -364,14 +363,6 @@ header .logo {
 
 .sg-secondary-icon {
     color: $sg-orange;
-}
-
-h2.sg-red {
-  color: $sg-orange
-}
-
-.sg-orange {
-  color: $sg-orange
 }
 
 a.sg-distributor-icon {
