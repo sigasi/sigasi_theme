@@ -34,6 +34,7 @@ $button-text-transform: none !default;
 $navbar-dropdown-margin: 0px;
 $navbar-dropdown-width: 150px !default;
 $nav-item-padding-vertical: 2px;
+$totop-hover-color: $sg-orange;
 
 // 2. Import default variables and available mixins.
 @import "../uikit/src/scss/variables-theme.scss";
@@ -275,9 +276,9 @@ header .logo {
 }
 
 .sg-scroller {
-  border: 1px solid $sg-white;
+  border: 1px solid $sg-black;
   border-radius: 4px;
-  color: $sg-white;
+  color: $sg-black;
   display: block;
   font-size: 24px;
   line-height: 36px;
