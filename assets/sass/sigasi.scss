@@ -11,10 +11,10 @@ $base-link-hover-color: $sg-orange;
 $base-code-color: $sg-orange;
 $base-pre-color: $sg-orange;
 $card-default-hover-background: $sg-white !default;
-$navbar-nav-item-color: $sg-orange !default;
+$navbar-nav-item-color: $sg-black !default;
 $navbar-nav-item-hover-color: $sg-orange !default;
 $navbar-nav-item-height: 36px;
-$navbar-nav-item-active-color: $sg-black;
+$navbar-nav-item-active-color: $sg-orange;
 $global-font-family: Lato;
 $base-heading-color: $sg-orange;
 $base-heading-margin-top: 20px;
@@ -113,6 +113,8 @@ $totop-hover-color: $sg-orange;
   h1 {
     font-family: Lato;
     font-weight: 900;
+    color: $sg-white;
+    background-color: $sg-orange;
   }
 }
 
@@ -341,6 +343,7 @@ a.sg-campaign {
   color: $sg-white;
   padding: 20px 0;
   text-align: center;
+  text-decoration: none;
   font-size: 30px;
   font-weight: 700;
   margin: 0px;
@@ -351,11 +354,13 @@ a.sg-insight-pager {
   display: inline-block;
   padding: 5px 14px;
   background-color: $sg-white;
-  border: 1px solid $sg-white;
+  border: 1px solid $sg-black;
   border-radius: 15px;
+  text-decoration: none;
 
   &:hover {
     background-color: $sg-white;
+    border: 1px solid $sg-orange;
   }
 
   &.sg-left::before {
